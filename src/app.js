@@ -9,7 +9,7 @@ window.onload = function () {
 
   const randomCard = () => {
 
-    const divFace = document.querySelector("#card");
+    const divFace = document.querySelector(".card");
 
     const faceArray = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K",]
 
@@ -22,7 +22,7 @@ window.onload = function () {
     divFace.innerHTML = faceArray[randomNumberNoDec]
 
 
-    const divSuit = document.querySelectorAll(".suit");
+    const divSuit = document.querySelectorAll(".suit, .bottom-suit");
 
     const suitArray = ["♦", "♥", "♠", "♣"]
 
@@ -46,7 +46,6 @@ window.onload = function () {
     }
 
     colorDivElement.innerHTML = suitArray[randomNumNoDec]
-        colorDivElement.style.backgroundColor = "blue"
 
       }
     )
@@ -58,7 +57,11 @@ window.onload = function () {
     if (suitArray[randomNumNoDec] == "♥") {
       divSuit.style.color = "red"
     }
-    if (suitArray[randomNumNoDec] == "♠" || suitArray[randomNumNoDec] == "♣") {
+    if (suitArray[randomNumNoDec] == "♠") {
+      divSuit.style.color = "black"
+    } 
+      
+    if  (suitArray[randomNumNoDec] == "♣") {
       divSuit.style.color = "black"
     }
 
@@ -71,8 +74,9 @@ window.onload = function () {
   myButton.style.backgroundColor = "green"
   myButton.addEventListener("click", randomCard)
 
-  const mySuit = document.querySelector("#suit");
+  const mySuit = document.querySelector(".suit");
   mySuit.addEventListener("click", randomCard)
+
 };
 
 
